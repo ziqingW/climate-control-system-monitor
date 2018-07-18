@@ -24,8 +24,7 @@ class TemplateHandler(tornado.web.RequestHandler):
       'no-store, no-cache, must-revalidate, max-age=0')
       
     def initialize(self):
-        self.session = queries.Session(
-        'postgresql://postgres@localhost:5432/home_mon')  
+        self.session = queries.Session(os.environ.get('DATABASE_URL'))  
         
 class MainHandler(TemplateHandler):
     def get(self):
