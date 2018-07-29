@@ -50,7 +50,11 @@ The Python script at `cron_jobs/get_latest.py` is run every 30 minutes by adding
 */30 * * * * cd /home/username/climate-control-system-monitor && /path/to/pipenv run python3 cron_jobs/get_latest.py
 ```
 where `get_latest.py` and `pipenv` are full paths. The script retrieves updated data from ThingSpeak's API, inserts it into the database, and generates a JSON file in the `monitor/static/json/ directory` 
+___
 
+## Update Notes
+2018-07-29  
+Updated Tornado server file, page js file and related html file to make them compatible with json file instead of database value
 
 ## Built With
 ![bootstrap icon](readme-img/bootstrap.png) Bootstrap &nbsp;|&nbsp; ![css3 icon](readme-img/css3.png) CSS3 &nbsp;|&nbsp; ![NGINX](readme-img/NGINX.png) NGINX &nbsp;|&nbsp; ![matlab icon](readme-img/matlab.png) ThingSpeak
