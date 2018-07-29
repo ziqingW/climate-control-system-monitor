@@ -193,9 +193,16 @@ svg rect:hover {
 /* detail control button styles*/
 
 #detail-content {
-    position: relative;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width : 90%;
 }
-
+.detail-wrap {
+    width : 100%;
+    flex-grow: 1;
+}
 .button-control {
     position: absolute;
     top: 43%;
@@ -242,12 +249,8 @@ svg rect:hover {
 }
 #button:hover{
     cursor: pointer;
-
-/* detail control button styles*/
-
-#detail-content {
-    position: relative;    
 }
+/* detail control button styles*/
 
 .button-control {
     position: absolute;

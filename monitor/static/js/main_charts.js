@@ -1,18 +1,17 @@
 $(document).ready(function(){
     var apiData = $("#my-data").data()['last'].replace(/'/g, '"');
     apiData = JSON.parse(apiData);
-    console.log(apiData);
-    var latestTime = apiData['created_at'];
+    var latestTime = apiData['created']
     latestTime = moment(latestTime).format('YYYY-MM-DD h:mm a');
     $("#current_time").text(moment().format('YYYY-MM-DD h:mm a'));
-    var field1 = {value: Number(apiData['field1']), dom: '#field1'}; 
-    var field2 = {value: Number(apiData['field2']), dom: '#field2'};
-    var field3 = {value: Number(apiData['field3']), dom: '#field3'};
-    var field4 = {value: Number(apiData['field4']), dom: '#field4'};
-    var field5 = {value: Number(apiData['field5']), dom: '#field5'};
-    var field6 = {value: Number(apiData['field6']), dom: '#field6'};
-    var field7 = {value: Number(apiData['field7']), dom: '#field7'};
-    var field8 = {value: Number(apiData['field8']), dom: '#field8'};
+    var field1 = {value: Number(apiData['bedroom_temp']), dom: '#field1'}; 
+    var field2 = {value: Number(apiData['bedroom_humidity']), dom: '#field2'};
+    var field3 = {value: Number(apiData['livingroom_temp']), dom: '#field3'};
+    var field4 = {value: Number(apiData['livingroom_humidity']), dom: '#field4'};
+    var field5 = {value: Number(apiData['kitchen_temp']), dom: '#field5'};
+    var field6 = {value: Number(apiData['kitchen_humidity']), dom: '#field6'};
+    var field7 = {value: Number(apiData['office_temp']), dom: '#field7'};
+    var field8 = {value: Number(apiData['office_humidity']), dom: '#field8'};
     
 // highcharts setup    
     Highcharts.chart('temp_bar_figure', {
@@ -123,7 +122,6 @@ $(document).ready(function(){
         arr.sort(function(a,b){
             return a['value'] - b['value'];
         });
-        console.log(arr);
         $(arr[0]['dom']).css('fill', '#8ab5ff');
         $(arr[arr.length-1]['dom']).css('fill', '#ff94a2');
         var rest = arr.slice(1, arr.length-1);

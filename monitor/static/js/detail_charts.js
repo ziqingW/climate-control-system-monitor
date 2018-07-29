@@ -2,8 +2,6 @@ $(document).ready(function() {
     var figure_id = $("#detail-data").data()['slug'] + '_detail';
     var detail_temps = $("#detail-data").data()['temp'];
     var detail_humis = $("#detail-data").data()['humi'];
-    console.log(detail_temps);
-    console.log(detail_humis);
     
     function drawChart(id, temp, humidity) {
         Highcharts.chart(id, {
@@ -25,7 +23,7 @@ $(document).ready(function() {
             }],
             yAxis: [{ // Primary yAxis
                 min: 65,
-                max: 80,
+                max: 85,
                 labels: {
                     format: '{value}°F',
                     style: {
@@ -98,8 +96,6 @@ $(document).ready(function() {
 // if it's the last day with data, prev button is disabled; if it's already today, next button is disabled
     
     var today = $("#detail-data").data()['date'];
-    console.log(today);
-    console.log(moment().format('YYYY-MM-DD'));
     if (today == moment().format('YYYY-MM-DD')) {
             $('#next').css('visibility', "hidden");
 
