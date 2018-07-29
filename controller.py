@@ -5,7 +5,7 @@ import tornado.log
 import time
 from datetime import datetime, date, timedelta
 import requests
-import queries
+# import queries
 import json
 
 from jinja2 import \
