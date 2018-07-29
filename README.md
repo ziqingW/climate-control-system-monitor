@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ziqingW/climate-control-system-monitor.png)](https://travis-ci.org/ziqingW/climate-control-system-monitor)
 # Home Climate Control Monitor
 
 <p align="center">
